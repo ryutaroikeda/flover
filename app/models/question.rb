@@ -12,8 +12,4 @@ class Question < ActiveRecord::Base
     self.tags.map(&:name).join(", ")
   end
 
-  private
-  def question_params
-    params.require(:question).permit(:author, :content, :all_tags)
-  end
 end

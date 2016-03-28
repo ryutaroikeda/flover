@@ -13,4 +13,9 @@ class QuestionsController < ApplicationController
       end
     end
   end
+
+  private
+  def question_params
+    params.require(:question).permit(:author, :title, :content, :all_tags)
+  end
 end

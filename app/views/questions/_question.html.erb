@@ -1,0 +1,13 @@
+<%= div_for question do %>
+	<div>
+		<strong><%= h(question.title) %></strong><br />
+		<sup>Asked by <%= h(question.author) %></sup><br />
+		<sup>From <%= time_ago_in_words(question.created_at)%> ago</sup><br />
+		<div>
+			<%= h(question.content) %>
+		</div>
+		<div class="tags">
+			<%=raw question.all_tags %>
+		</div>
+	</div>
+<% end %>
